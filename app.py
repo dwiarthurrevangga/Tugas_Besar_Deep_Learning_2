@@ -8,7 +8,7 @@ import os
 
 # --- KONFIGURASI HALAMAN ---
 st.set_page_config(
-    page_title="Absensi Mahasiswa AI (Fix Crop)",
+    page_title="Presensi Mahasiswa dengan Face Recognition",
     page_icon="🎓",
     layout="centered"
 )
@@ -145,7 +145,7 @@ def preprocess_tensor(face_pil):
 
 # --- UI ---
 st.title("Presensi Mahasiswa dengan Face Recognition")
-st.write("Versi perbaikan dengan dukungan deteksi wajah yang dirotasi.")
+st.write("Aplikasi ini adalah sistem presensi berbasis face recognition yang dibangun dengan Streamlit dan PyTorch. Gambar dari upload atau kamera diproses menggunakan MTCNN yang telah diperketat dan mampu mendeteksi wajah pada berbagai rotasi. Setelah wajah ditemukan, sistem melakukan crop dengan logika preprocessing training (center crop + margin 20%), mengubahnya menjadi ukuran 224×224, lalu menormalisasi dan mengonversinya menjadi tensor. Hasil crop kemudian diprediksi menggunakan model InceptionResnetV1 yang telah di-fine-tune pada data mahasiswa, menghasilkan identitas dan tingkat kepercayaan melalui softmax. Antarmuka menampilkan bounding box, wajah crop, nama yang teridentifikasi, confidence, serta Top-5 prediksi. Sistem ini dikembangkan oleh Freddy Harahap dan Dwi Arthur Revangga.")
 
 if model is None:
     st.warning("⚠️ Model belum ditemukan. Upload file .pth dulu.")
