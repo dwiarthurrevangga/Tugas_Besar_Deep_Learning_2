@@ -145,7 +145,32 @@ def preprocess_tensor(face_pil):
 
 # --- UI ---
 st.title("Presensi Mahasiswa dengan Face Recognition")
-st.write("Aplikasi ini adalah sistem presensi berbasis face recognition yang dibangun dengan Streamlit dan PyTorch. Gambar dari upload atau kamera diproses menggunakan MTCNN yang telah diperketat dan mampu mendeteksi wajah pada berbagai rotasi. Setelah wajah ditemukan, sistem melakukan crop dengan logika preprocessing training (center crop + margin 20%), mengubahnya menjadi ukuran 224×224, lalu menormalisasi dan mengonversinya menjadi tensor. Hasil crop kemudian diprediksi menggunakan model InceptionResnetV1 yang telah di-fine-tune pada data mahasiswa, menghasilkan identitas dan tingkat kepercayaan melalui softmax. Antarmuka menampilkan bounding box, wajah crop, nama yang teridentifikasi, confidence, serta Top-5 prediksi. Sistem ini dikembangkan oleh Freddy Harahap dan Dwi Arthur Revangga.")
+
+st.write("""
+Aplikasi ini merupakan sistem presensi mahasiswa berbasis *face recognition* 
+yang dibangun menggunakan **Streamlit** dan **PyTorch**.
+
+Gambar yang diunggah melalui file atau kamera akan diproses menggunakan **MTCNN** 
+yang telah dioptimalkan untuk mendeteksi wajah pada berbagai rotasi. Setelah wajah 
+terdeteksi, sistem melakukan *cropping* dengan metode yang sama seperti saat training 
+(*center crop* + margin 20%), kemudian diubah ke ukuran **224×224**, dinormalisasi, 
+dan dikonversi menjadi **tensor**.
+
+Hasil *crop* wajah tersebut selanjutnya diprediksi menggunakan model 
+**InceptionResnetV1** yang telah di-*fine-tune* pada dataset mahasiswa. 
+Model akan menghasilkan **identitas mahasiswa** beserta **tingkat kepercayaan (confidence)** 
+menggunakan fungsi **softmax**.
+
+Antarmuka aplikasi menampilkan:
+- Bounding box pada wajah yang terdeteksi
+- Hasil *crop* wajah
+- Nama yang teridentifikasi
+- Nilai *confidence*
+- Top-5 hasil prediksi teratas
+
+Sistem ini dikembangkan oleh **Freddy Harahap** dan **Dwi Arthur Revangga**.
+""")
+
 
 if model is None:
     st.warning("⚠️ Model belum ditemukan. Upload file .pth dulu.")
