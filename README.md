@@ -277,30 +277,6 @@ class_names = checkpoint["class_names"]
 
 ---
 
-## 📈 Rekomendasi Penggunaan
-
-### Pilih InceptionResNetV1 jika:
-- ✅ Prioritas adalah **akurasi maksimal**
-- ✅ Tersedia GPU dengan memori cukup (8GB+)
-- ✅ Face recognition adalah use case utama
-- ✅ Training time bukan constraint utama
-
-### Pilih DeiT-small jika:
-- ✅ Ingin eksplorasi **transformer architecture**
-- ✅ Tertarik dengan **state-of-the-art techniques**
-- ✅ Memiliki **computational resources tinggi**
-- ✅ Dataset cukup besar atau bisa augmentasi agresif
-- ✅ Research-oriented project
-
-### Pilih EfficientNetB0 jika:
-- ✅ Butuh **deployment cepat** dengan resource terbatas
-- ✅ Prioritas **efisiensi** dan inference speed
-- ✅ GPU memori terbatas (<6GB)
-- ✅ Akurasi 82-86% sudah acceptable
-- ✅ Production-ready solution
-
----
-
 ## 📝 Kesimpulan
 
 Dari ketiga model yang diimplementasikan, **InceptionResNetV1** menunjukkan performa terbaik untuk face recognition task karena:
@@ -325,8 +301,8 @@ Complexity:  DeiT-small > InceptionResNetV1 > EfficientNetB0
 ---
 
 ## 👥 Tim Pengembang
-Freddy Harahap - 122140018
-Dwi Arthur Revangga - 122140144
+- Freddy Harahap (122140018)
+- Dwi Arthur Revangga (122140144)
 
 ## 📚 Referensi
 - InceptionResNetV1: [FaceNet Paper](https://arxiv.org/abs/1503.03832)
